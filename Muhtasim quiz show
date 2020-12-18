@@ -1,0 +1,188 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+public class random_practice
+	{ 
+		// Ask the user for their name and send it to the main method
+		public static String getName()
+		{
+			Scanner input = new Scanner(System.in);
+			String name = new String();
+			System.out.println("Enter your name");
+			name = input.next();
+			return name;
+		}
+		//In this method, an array to determine how many questions were left until the user was finished the quiz show. Extra comment: qleft stands for questions left.
+		public static int qleft(int z){
+			int[] bye = {8,7,6,5,4,3,2,1};
+			return bye[z];
+			
+		}
+		public static void main(String[] args) {
+	    	Scanner input = new Scanner(System.in);
+	   		// Here the name came from the method and held it in a variable called name.
+	   		String name = getName();
+	   		//here,  all the variable slots I would need for this program.
+	   		int dollars = 0;int z=0;
+	   		char ans,a,b,c,n,y;
+	   	 	// Question 1
+	   		System.out.println(name + ", What is 4 x 4?");
+	   		String[] q1 = {"a = 14","b = 16","c = 10"};
+	   		for(int i = 0;i < 3;i++){
+	   			System.out.println(q1[i]);
+	   		}
+	   		ans = input.next().charAt(0);
+	   		// If the user entered b, this code would run.
+	   		if(ans == 'b'||ans == 'B'){
+	       		//Here, if the user got it right, $50 would be added to their current earnings.
+	       		dollars = dollars + 50;
+	       		System.out.println("You got this question right."+qleft(z)+" questions left before you are done. You have earned $" + dollars + ".");
+	       		z++;
+	       	//if user entered anything other than b, this code would run.	
+	   		}
+	   		else
+	   		{
+	       		System.out.println("Sorry, you got this question wrong.Thank you for playing. You made 0 dollars");
+	       		//This line of code will terminate the code and any code after it wont run.
+	       		System.exit(0);
+	   		}
+	   		//Question 2
+	   		System.out.println(name + ", What is 100 x 100?");
+	   		String[] q2 = {"a = 1 000 000","b = 100 000","c = 10 000"};
+	   		for(int i = 0;i < 3;i++){
+	   			System.out.println(q2[i]);
+	   		}
+	   		ans = input.next().charAt(0);
+	   		if(ans == 'c'||ans == 'C'){
+	     		dollars = dollars + 50;
+	            System.out.println("Congratulations, you got this question right. "+ qleft(z) +" questions left before you are done.You have earned $" + dollars + ".");
+	     		z++;
+	   		}else{
+	   			System.out.println("Sorry you got this wrong.Thank you for playing. You have made 0 dollars.");
+	     		System.exit(0);
+	   		}
+	   		//Question 3
+	   		System.out.println(name + ", What is 7 x 8?");
+	   		String[] q3 = {"a = 15","b = 56","c = -1"};
+	   		for(int i = 0;i < 3;i++){
+	   			System.out.println(q3[i]);
+	   		}
+	   		ans = input.next().charAt(0);
+	   		if(ans == 'b'|| ans == 'B'){
+	     		dollars = dollars + 50;
+	     		System.out.println("Congratulations, you got this question right."+ qleft(z) + " questions left before you are done. You have earned $" + dollars + ".");
+	     		z++;
+	   		}else{
+	     		System.out.println("Sorry you got this wrong.Thank you for playing. You have made 0 dollars.");
+	     		System.exit(0);
+	   		}
+	   		// Here, I told them their earnings and gave them an option to walk away with their money.
+	   		System.out.println(name + ", your earnings are $"+ dollars + ". Do you want to continue?(y/n)");
+	   		ans = input.next().charAt(0);
+	   		if(ans == 'n'|| ans == 'N'){
+	     		System.out.println("You have chosen to stop playing.In total, you made $" + dollars + ". Thank you for playing.");
+	     		System.exit(0);
+	     	}
+	   		System.out.println("You have chosen to continue playing. This round, each question will be worth $500.It will also be more complicated than the last round. Get ready!");
+	   		//Question 4
+	   		System.out.println(name + ", What is 4(5 + 1)");
+	   		String[] q4 = {"a = 25","b = 56","c = 24" };
+	   		for(int i = 0;i < 3;i++){
+	   			System.out.println(q4[i]);
+	   		}
+	   		ans = input.next().charAt(0);
+	   		if(ans == 'c'|| ans == 'C'){
+	     		dollars = dollars + 500;
+	     		System.out.println("Congratulations, you got this question right."+ qleft(z) + " questions left before you are done.You have earned $" + dollars + " in total.");
+	     		z++;
+	     		}else{
+	     		System.out.println("Sorry you got this wrong.Thank you for playing. You have made 0 dollars.");
+	     		System.exit(0);
+	   		}
+	   		//Question 5
+	   		System.out.println(name + ", What is 6/(10 - 7)");
+	   		String[] q5 = {"a = -6.7","b = 2","c = 60"};
+	   		for (int i = 0; i < 3; i++){
+	   			System.out.println(q5[i]);
+	   		}
+	   		ans = input.next().charAt(0);
+	   		if(ans == 'b'|| ans == 'B'){
+	     		dollars = dollars + 500;
+	     		System.out.println("Congratulations, you got this question right."+ qleft(z) +" questions left before you are done.You have earned $" + dollars + " in total.");
+	     		z++;
+	     		}else{
+	     		System.out.println("Sorry you got this wrong.Thank you for playing. You have made 0 dollars.");
+	     		System.exit(0);
+	   		}
+	   		//Question 6
+	   		System.out.println(name + ", What is 1/2 + 3/6?");
+	   		String[] q6 = {"a = 1/3","b = 2/4","c = 1"};
+	   		for (int i = 0; i < 3; i++){
+	   			System.out.println(q6[i]);
+	   		}
+	   		ans = input.next().charAt(0);
+	   		if(ans == 'c'|| ans == 'C'){
+	     		dollars = dollars + 500;
+	     		System.out.println("Congratulations, you got this question right."+ qleft(z) +" questions left before you win. You have earned $" + dollars + " in total.");
+	     		z++;
+	     		}else{
+	     		System.out.println("Sorry you got this wrong.Thank you for playing. You have made 0 dollars.");
+	     		System.exit(0);
+	   		}
+	   		System.out.println(name + ", You have earned $" + dollars + ". Do you want to continue?(y/n)");
+	   		ans = input.next().charAt(0);
+	   		if(ans == 'n'|| ans == 'N'){
+	     		System.out.println("You have chosen to stop playing.In total, you made $" + dollars + ". Thank you for playing.");
+	 			System.exit(0);
+	   		}
+	   		System.out.println("You have chosen to continue playing. This is the final section of questions. Each question is worth $5000. Good luck!!!");
+	   		//Question 7
+	   		System.out.println(name + ", What is (x + 5)(x + 5)");
+	   		String[] q7 = {"a = 2x + 10","b = x^2 + 10x + 25","c = x^2 + 25"};
+	   		for(int i = 0;i < 3;i++){
+	   			System.out.println(q7[i]);
+	   		}
+	   		ans = input.next().charAt(0);
+	   		if(ans == 'b'|| ans == 'B'){
+	    		 dollars = dollars + 500;
+	     		System.out.println("Congratulations, you got this question right."+ qleft(z) +" more questions until you win. You have earned $" + dollars + " in total.");
+	     		z++;
+	     		}else{
+	     		System.out.println("Sorry you got this wrong.Thank you for playing. You have made 0 dollars.");
+	     		System.exit(0);
+	   		}
+	   		//Question 8
+	   		System.out.println(name + ", What is (x + 5)(x - 5)");
+	   		String[] q8 = {"a = x^2 - 25","b = x^2 - 10x - 25","c = x^2 + 25"};
+	   		for(int i = 0;i < 3;i++){
+	   			System.out.println(q8[i]);
+	   		}
+	   		ans = input.next().charAt(0);
+	   		if(ans == 'a'|| ans == 'A'){
+	     		dollars = dollars + 5000;
+	     		System.out.println("Congratulations, you got this question right."+ qleft(z) +" more question until you win You have earned $" + dollars + " in total.");
+	    		 }else{
+	     		System.out.println("Sorry you got this wrong.Thank you for playing. You have made 0 dollars.");
+	    		 System.exit(0);
+	   		}
+	   		//Question 9
+	   		System.out.println(name + ", What is x^8/x^-5?");
+	  		 String[] q9 = {"a = x^3","b = x^13","c = x^10"};
+	  		 for(int i = 0;i < 3;i++){
+	   			System.out.println(q9[i]);
+	  		 }
+	   		ans = input.next().charAt(0);
+	   		if(ans == 'b'|| ans == 'B'){
+	    		 dollars = dollars + 5000;
+	    		 System.out.println("CONGRATULATIONS, YOU WIN!!! You have anwsered all the questions correctly. Your prize money that you have earned is $" + dollars + ".");
+	     		}else{
+	     		System.out.println("Sorry you got this wrong.Thank you for playing. You have made 0 dollars.");
+	     		System.exit(0);
+	   			}
+	   
+	 
+	 	}
+	 
+
+ }
+	  
+ 
